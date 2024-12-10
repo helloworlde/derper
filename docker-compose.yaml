@@ -1,0 +1,26 @@
+services:
+  derper:
+    image: derper
+    container_name: derper
+    environment:
+      - DEV=false
+      - HTTPS_PORT=:443
+      - HTTP_PORT=80
+      - STUN_PORT=3478
+      - HOSTNAME=localhost
+      - CERTS_DIR=/app/certs/
+      - CERTMODE=manual
+      - STUN_ENABLE=true
+      - DERP_ENABLE=true
+      - VERIFY_CLIENTS=false
+      - TS_DEBUG_KEY_PATH=/app/config/debug.key 
+      - DERP_DEBUG_LOGS=true
+      #- CONFIG_PATH=/app/config/derper.key
+    ports:
+      - "443:443"
+      - "80:80"
+      - "3478:3478"
+      - "3340:3340"
+    volumes:
+     - ./cert:/app/certs
+     - ./config:/app/config
