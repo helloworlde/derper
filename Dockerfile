@@ -35,7 +35,7 @@ COPY --from=build-env /derper /app/derper
 
 ENTRYPOINT ["sh", "-c", "/app/derper \
     --c=${CONFIG_PATH} \
-    --a=${HTTPS_PORT} \
+    --a=${ADDR} \
     --http-port=${HTTP_PORT} \
     --stun-port=${STUN_PORT} \
     --certmode=${CERTMODE} \

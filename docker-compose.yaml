@@ -4,7 +4,7 @@ services:
     container_name: derper
     environment:
       - DEV=false
-      - HTTPS_PORT=:443
+      - ADDR=:443
       - HTTP_PORT=80
       - STUN_PORT=3478
       - HOSTNAME=localhost
