@@ -12,7 +12,7 @@ RUN cd /go/src/tailscale/cmd/derper/ && GOARCH=$TARGETARCH CGO_ENABLED=0 go buil
 
 FROM alpine:3.18
 
-RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache ca-certificates iproute2
 
 ENV ADDR=:443 \
     HTTP_PORT=80 \
